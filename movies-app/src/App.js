@@ -1,5 +1,10 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import MovieDetails from "./Components/MovieDetails";
+import React from "react";
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {BrowserRouter} from"react-router-dom";
+import {Routes} from"react-router-dom";
+import {Route} from"react-router-dom";
+
+import MovieDetails from "./Components/MoviesDetails";
 import MovieSearch from "./Components/MovieSearch";
 import "./App.css"
 function App() {
