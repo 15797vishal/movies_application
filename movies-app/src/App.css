@@ -1,24 +1,142 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+* {
+  background-color: black;
   color: white;
+  font-family: 'Inter';
+  list-style:  none;
+  text-decoration: none;
 }
 
-.App-intro {
-  font-size: large;
+.heading {
+  position: absolute;
+  width: 278px;
+  height: 39px;
+  left: 30px;
+  top: -160px;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 39px;
+  color: #FFFFFF;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.title {
+  position: absolute;
+  width: 489px;
+  height: 39px;
+  left: 30px;
+  top: -103px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 39px;
+  color: #FFFFFF;
+}
+
+.App {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  top: 180px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.movie-title {
+  position: absolute;
+  width: 450px;
+  height: 9px;
+  left: 30px;
+  top: 100px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 39px;
+  color: #FFFFFF;
+}
+
+.App img {
+  width: 100%;
+  height: 70%;
+}
+
+.movie-search input {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 1300px;
+  height: 54px;
+  left: 30px;
+  top: -10px;
+  font-size: 22px;
+  border: 1px solid #FFFFFF;
+  border: none;
+  /* margin:10px; */
+
+}
+
+.movie-search input::placeholder {
+  border-bottom: 1px solid #fff;
+  font-size: 22px;
+  padding: 10px;
+  color: #fff;
+}
+
+.movie-search button.btn {
+  position: absolute;
+  width: 262px;
+  height: 66px;
+  left: 30px;
+  top: 50px;
+  cursor: pointer;
+  background: #FFFFFF;
+  border-radius: 10px;
+  color: black;
+  font-size: 25px;
+}
+
+.btn1 {
+  width: 402.55px;
+  height: 56px;
+  left: 74.54px;
+  top: 1092px;
+  color: black;
+  background: #FFFFFF;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 25px;
+  cursor: pointer;
+
+}
+
+.movie-data {
+  position: relative;
+  top: -150px;
+}
+
+.movie-data img {
+  display: flex;
+  justify-content: center;
+  /* horizontally center */
+  align-items: center;
+  /* vertically center */
+  height: 400px;
+  width: 500px;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.loading {
+  position: relative;
+  left: 300px;
+  top: 30px;
+  font-size: 25px;
+  color: green;
 }
