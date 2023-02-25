@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const MovieSearch = () => {
-  // Declaring state variables using useState hook
+  
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  // Event handler for input change
+  
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
   };
-  // Event handler for search button click
+  
   const handleSearchClick = () => {
      if (searchTerm === "") {
        alert("Please enter a movie title to search");
@@ -18,13 +18,13 @@ const MovieSearch = () => {
      }
     setIsLoading(true);
     const apiKey = "1efa376d";
-    // Fetching movie data from  API using provided API key and search term
+    
     fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`)
       .then((response) => response.json())
       .then((data) => {
-        // Updating search results state with retrieved data and setting loading state to false
+       
       if (data.Response === "False") {
-        // handle error, display error message to user
+       
         alert("please enter valid Movie Title")
       } else {
         setSearchResults(data.Search);
@@ -37,7 +37,7 @@ const MovieSearch = () => {
         setIsLoading(false);
       });
   };
-  // Rendering component JSX
+ 
   return (
     <div className="movie-search">
       <a href="/">

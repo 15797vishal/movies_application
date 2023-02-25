@@ -2,44 +2,42 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function MovieDetails() {
-  const { imdbID } = useParams(); // Get the IMDB ID from the router parameter
-
-  // State variables to hold movie data, loading status, and error
+  const { imdbID } = useParams(); 
   const [movieData, setMovieData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch movie data from API using IMDB ID as parameter
+  
   useEffect(() => {
     const ApiKey = "1efa376d";
     fetch(`https://www.omdbapi.com/?apikey=${ApiKey}&i=${imdbID}`)
       .then((response) => response.json())
       .then((data) => {
-        setMovieData(data); // Set movie data in state
-        setIsLoading(false); // Set loading status to false
+        setMovieData(data); 
+        setIsLoading(false); 
       })
       .catch((error) => {
-        setIsLoading(false); // Set loading status to false
-        setError(error); // Set error in state
+        setIsLoading(false); 
+        setError(error); 
       });
-  }, [imdbID]); // Only run effect when IMDB ID changes
+  }, [imdbID]); 
 
-  // Render loading indicator if data is still being fetched
+  
   if (isLoading) {
     return <div>Loading...</div>;
   }
 
-  // Render error message if there was an error fetching data
+  
   if (error) {
     return <div>Error: {error.message}</div>;
   }
 
-  // Render nothing if there is no movie data
+  
   if (!movieData) {
     return null;
   }
 
-  // Render movie details
+
   return (
     <div className="movie-data">
       <div className="data">
